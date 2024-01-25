@@ -1,0 +1,34 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        int result = 0;     // 정답
+        for(int i = 0; i < N; i++) {
+            String str = br.readLine();
+            boolean isGroupWord = true;
+            boolean[] alphabet = new boolean[26];
+
+            while(!str.isEmpty()) {
+                char c = str.charAt(0);
+                // System.out.println((int)c - 97);
+                if(alphabet[(int)(c) - 97] == false) {
+                    alphabet[(int)(c) - 97] = true;
+                    while(!str.isEmpty() && str.charAt(0) == c) {
+                        str = str.substring(1);
+                    }
+                } else {
+                    isGroupWord = false;
+                    break;
+                }
+            }
+
+            if(isGroupWord) result++;
+        }
+
+        System.out.println(result);
+    }
+}
