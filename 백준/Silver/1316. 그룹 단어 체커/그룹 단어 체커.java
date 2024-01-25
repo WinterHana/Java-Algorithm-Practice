@@ -14,9 +14,8 @@ public class Main {
 
             while(!str.isEmpty()) {
                 char c = str.charAt(0);
-                // System.out.println((int)c - 97);
-                if(alphabet[(int)(c) - 97] == false) {
-                    alphabet[(int)(c) - 97] = true;
+                if(alphabet[(int)(c) - 'a'] == false) {
+                    alphabet[(int)(c) - 'a'] = true;
                     while(!str.isEmpty() && str.charAt(0) == c) {
                         str = str.substring(1);
                     }
