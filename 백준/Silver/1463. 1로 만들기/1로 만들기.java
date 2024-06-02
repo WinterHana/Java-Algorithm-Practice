@@ -1,7 +1,10 @@
+
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
+ * https://beginnerdeveloper-lit.tistory.com/81
  * DP 문제 : 점화식 도출
  * N을 1로 만들기 위한 최소 횟수 = N - 1을 1로 만들기 위한 최소 횟수 + 1
  * OR 2나 3으로 니눠지면, 나눠지고 남은 몫의 경우의 연산의 수 + 1
