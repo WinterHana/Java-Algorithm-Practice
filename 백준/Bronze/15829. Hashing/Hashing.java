@@ -12,11 +12,15 @@ public class Main {
             chars[i] = inputString.charAt(i);
         }
 
-        int sum = 0;
+        long sum = 0;
+        long r = 1;
         for(int i = 0; i < N; i++) {
-            sum += (int)(chars[i] - 96) * Math.pow(31, i);
+            long a = (chars[i] - 96);
+            sum +=  a * r;
+            r = (r * 31) % 1234567891;
         }
 
-        System.out.println(sum);
+        long result = sum % 1234567891;
+        System.out.println(result);
     }
 }
